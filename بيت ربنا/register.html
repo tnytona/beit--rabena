@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="register.css">
+    <title>بيت ربنا</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1 style="text-align: center;">إنضم لبيت ربنا</h1>
+        <div class="firstrow">
+            <input id="Firstname" type="text" placeholder="الإسم الأول" value="" style="float: right; margin: 10px 30px; text-align: right; font-size: 18px; width: 75%;">
+            <input id="Lastname" type="text" placeholder="الإسم الأخير" style="float: right; margin: 10px 30px; text-align: right; font-size: 18px; width: 75%;">
+            <input id="Phonenumber" type="text" placeholder="رقم التليفون" style="float: right; margin: 10px 30px; text-align: right; font-size: 18px; width: 75%;">
+            <input id="Email" type="email" placeholder="البريد الإلكتروني" style="float: right; margin: 10px 30px; text-align: right; font-size: 18px; width: 75%;">
+            <input id="Password" type="password" placeholder="كلمة المرور" style="float: right; margin: 10px 30px; text-align: right; font-size: 18px; width: 75%;">
+            <input id="Anotherpassword" type="password" placeholder="كلمة مرور اخري" style="float: right; margin: 10px 30px; text-align: right; font-size: 18px; width: 75%;">
+        </div>
+        <button class="submit" onclick="saveToLocalStorage()" style="width: 90%; height: 10%; float: left; background-color: blue; font-family: 'Droid Arabic Kufi', serif; font-size: 20px; border: transparent; outline: transparent; cursor: pointer; border-radius: 20px; box-shadow: 0 2px 4px gray; color: white; font-weight: bold; bottom: 10px; left: 5%; position: absolute;">تسجيل الدخول كعضو جديد</button>
+    </div>
+
+    <script>
+
+        function saveToLocalStorage() {
+
+            var inputValue = document.getElementById('Firstname').value.trim();
+            var inputValue2 = document.getElementById('Lastname').value.trim();
+            var inputValue3 = document.getElementById('Phonenumber').value.trim();
+            var inputValue4 = document.getElementById('Email').value.trim();
+            var inputValue5 = document.getElementById('Password').value.trim();
+            var inputValue6 = document.getElementById('Anotherpassword').value.trim();
+
+            //
+            inputValue = localStorage.getItem('Firstname');
+            //
+
+            if (inputValue === '') {
+                alert('you can not leave this input empty');
+            }
+
+            else {
+                localStorage.setItem('Firstname', inputValue);
+                console.log( 'First name: ' + localStorage.getItem('Firstname'));
+            }
+
+            /////////////////////////////////////////////
+
+            if (inputValue2 === '') {
+                alert('you can not leave this input empty');
+            }
+
+            else {
+                localStorage.setItem('Lastname', inputValue2);
+                console.log( 'Last name: ' + localStorage.getItem('Lastname'));
+            }
+
+            /////////////////////////////////////////////
+
+            if (inputValue3 === '') {
+                alert('you can not leave this input empty');
+            }
+
+            else {          
+                localStorage.setItem('Phonenumber', inputValue3);
+                console.log( 'Phone number: ' + localStorage.getItem('Phonenumber')); 
+            }
+
+            /////////////////////////////////////////////
+
+            if (inputValue4 === '') {
+                alert('you can not leave this input empty');
+            }
+
+            else {
+                localStorage.setItem('Email', inputValue4);
+                console.log( 'Email: ' + localStorage.getItem('Email')); 
+            }
+
+            /////////////////////////////////////////////
+
+            if (inputValue5 === '') {
+                alert('you can not leave this input empty');
+            }
+
+            else {
+                localStorage.setItem('Password', inputValue5);
+                console.log( 'Password: ' + localStorage.getItem('Password')); 
+            }
+            /////////////////////////////////////////////
+
+            if (inputValue6 === '') {
+                alert('you can not leave this input empty');
+            }
+
+            else {
+            localStorage.setItem('Anotherpassword', inputValue6);
+            console.log( 'Another password: ' + localStorage.getItem('Anotherpassword')); 
+            }
+
+            if ((inputValue,inputValue2,inputValue3,inputValue4,inputValue5,inputValue6) === '') {
+                console.warn("data isn't correct")
+            }
+
+            else {
+                window.open('main.html')
+            }
+        }
+           
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Save to Local Storage</title>
+</head>
+<body>
+    <input type="text" id="inputValue" placeholder="Enter something...">
+    <button onclick="signIn()">Save</button>
+
+    <script>
+ function signIn() {
+    let input = document.getElementById("inputValue").value.trim();
+    if (input === '') {
+        alert("Input cannot be empty or just spaces.");
+    }
+}
+    </script>
+</body>
+</html>
